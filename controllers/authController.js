@@ -150,6 +150,9 @@ const updateProfile = async(req,res, next)=>{
     })
   }
 }
+const check = ( req, res)=>{
+  res.status(200).send("Hola mundo")
+}
 module.exports = {
     createUser,
     login,
@@ -158,5 +161,6 @@ module.exports = {
     updateUser,
     deleteUser,
     getUserProfile,
-    updateProfile
+    updateProfile,
+    check
 }

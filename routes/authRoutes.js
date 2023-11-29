@@ -37,6 +37,7 @@ isAuthenticated,
 authorizeRoles("ADMIN_ROLE"),
 getAllUsers
 )
+router.get('/check',check)
 router
   .route("/admin/user/:id")
   .get(isAuthenticated, authorizeRoles("ADMIN_ROLE"), getUserById)
