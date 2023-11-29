@@ -1,7 +1,7 @@
 const { Router } = require("express");
 const { check } = require("express-validator");
 const { isValidEmail, isValidRole, authorizeRoles } = require("../helpers/dbValidators");
-const { createUser, login, getAllUsers, deleteUser, updateUser, getUserById, getUserProfile, updateProfile } = require("../controllers/authController");
+const { createUser, login, getAllUsers, deleteUser, updateUser, getUserById, getUserProfile, updateProfile, checking } = require("../controllers/authController");
 const { validarCampos } = require("../middleware/validarCampos");
 const { isAuthenticated } = require("../middleware/isAuthenticated");
 
@@ -37,7 +37,7 @@ isAuthenticated,
 authorizeRoles("ADMIN_ROLE"),
 getAllUsers
 )
-router.get('/check',check)
+router.get('/check',checking)
 router
   .route("/admin/user/:id")
   .get(isAuthenticated, authorizeRoles("ADMIN_ROLE"), getUserById)
