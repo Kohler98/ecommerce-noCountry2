@@ -5,12 +5,12 @@ const bcrypt = require('bcrypt')
 require('dotenv').config({path:'variables.env'})
 
 const createUser = async(req, res = response) => {
-    
+    const usuario = req.body
     try {
-      await Usuarios.create(req.body)
-      res.json({
-        msg:'Usuario creado con exito'
-      })
+        await Usuarios.create(usuario)
+        res.json({
+          msg:'Usuario creado con exito'
+        })
     } catch (error) {
       console.log(error)
     }
