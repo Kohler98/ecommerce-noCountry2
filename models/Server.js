@@ -16,7 +16,7 @@ class Server{
         }
         //conectar a base de datos
 
-        // this.conectarDB()
+ 
         //Midlewares : no son mas que funciones que van a añadirle otras funcionalidades al web server
         // en otras palabras es una funcion que se ejecuta antes de llamar un controlador o seguir con la ejecucion
         //de las peticiones
@@ -32,7 +32,7 @@ class Server{
 
 
     middlewares(){
-        this.app.use(express.json())
+        this.app.use(bodyParser.json())
         this.app.use(bodyParser.urlencoded({extended:true}))
         this.app.use(cors())
         this.app.use((req, res, next) => {
