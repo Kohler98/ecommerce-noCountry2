@@ -2,7 +2,7 @@ const { generarJWT } = require("../helpers/generarJWT");
 const Pedidos = require("../models/Pedido");
 const Usuarios = require("../models/Usuario");
 const bcrypt = require('bcrypt')
-require('dotenv').config({path:'variables.env'})
+require('dotenv').config()
 
 const createUser = async(req, res = response) => {
     const usuario = req.body
