@@ -1,4 +1,4 @@
-require('dotenv').config({path:'variables.env'})
+require('dotenv').config()
 const Server = require("./models/Server");
 
 const server = new Server()

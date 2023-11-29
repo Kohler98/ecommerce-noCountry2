@@ -1,6 +1,6 @@
 const {Sequelize} = require('sequelize')
 const pg = require('pg')
-require('dotenv').config({path:'variables.env'})
+require('dotenv').config()
 
 const db = new Sequelize(process.env.BASE_URL,{
     host:process.env.BD_HOST,
