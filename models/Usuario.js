@@ -1,7 +1,7 @@
 // nombre, apellido, password , correo, pais, estado, ciudad, codigoPostal,
 const Sequelize = require('sequelize')
 const {db} = require("../dataBase/db.js")
-const bcrypt = require('bcrypt-nodejs')
+const bcrypt = require('bcrypt')
 const { v4: uuidv4 } = require('uuid');
 const Usuarios = db.define('usuarios',{
     id:{
