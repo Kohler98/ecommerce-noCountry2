@@ -11,9 +11,18 @@ const Categorias = db.define('categorias',{
  
     },
     nombre:Sequelize.TEXT,
-    slug:Sequelize.TEXT
+    slug:{
+        type:Sequelize.TEXT,
+        allowNull:true
+    }
+},{
+    hooks:{
+        beforeCreate:(category)=>{
+            category.slug = category.nombre.replace(/\s/g, "-");
+        }
+    }
 },{
     timestamps:false
 })
-
+ 
 module.exports = Categorias;

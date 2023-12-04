@@ -22,9 +22,6 @@ const Productos = db.define('productos',{
         }
 
     },
-    slug:{
-        type:Sequelize.STRING
-    },
     precio:{
         type: Sequelize.FLOAT,
         allowNull:false,
@@ -33,7 +30,12 @@ const Productos = db.define('productos',{
                 msg:'El precio no puede estar vacio'
             }
         }
-
+        
+    },
+    category:{
+        type:Sequelize.STRING,
+        allowNull:false
+        
     },
     in_stock:{
         type: Sequelize.INTEGER,

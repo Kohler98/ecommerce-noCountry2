@@ -11,8 +11,9 @@ class Server{
         this.host = process.env.HOST || '0.0.0.0'
         this.paths = {
             authRoutes:"/",
-            productRoutes:"product/",
-            orderRoutes:"order/",
+            productRoutes:"/product",
+            orderRoutes:"/order",
+            categoryRoutes:"/category",
         }
         //conectar a base de datos
 
@@ -41,6 +42,8 @@ class Server{
     routes(){
     
         this.app.use(this.paths.authRoutes, require("../routes/authRoutes.js"))
+        this.app.use(this.paths.productRoutes, require("../routes/productRoutes.js"))
+        this.app.use(this.paths.categoryRoutes, require("../routes/categoryRoutes.js"))
  
     }
  
