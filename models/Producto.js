@@ -42,15 +42,15 @@ const Productos = db.define('productos',{
         defaultValue:1
 
     },
-    imagen:Sequelize.STRING(60),
     descripcion:{
         type:Sequelize.STRING(120),
         allowNull:true,
     },
     activo:{
         type:Sequelize.BOOLEAN,
-        defaultValue:false
-    }
+        defaultValue:true
+    },
+    imagen:Sequelize.TEXT,
 })
 
 
