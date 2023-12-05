@@ -1,4 +1,4 @@
 node_modules
 .env
-public/uploads/grupos/*
+public/uploads/productos/*
 public/uploads/users/*
