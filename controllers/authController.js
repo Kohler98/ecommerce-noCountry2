@@ -105,7 +105,7 @@ const updateUser = async(req,res)=>{
   const {_id,password, ...resto} = req.body
   const usuario = await Usuarios.findOne({where:{email:resto.email}})
 
-  if(usuario && req.usuario.email != resto.email){
+  if(usuario ){
     return res.status(400).json({
       msg:`Ya existe un usuario con el email ${resto.email}`
     })

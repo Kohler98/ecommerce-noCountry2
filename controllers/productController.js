@@ -71,7 +71,7 @@ const filtrarProducto = async(req,res=response)=>{
     if(!categoria){
         return res.status(500).json({ msg: "Error la categoria que intenta obtener no existe" });
     }
-    console.log(categoria)
+   
     try {
         const productos = await Productos.findAll({where:{category:categoria.nombre}})
         res.json(productos)

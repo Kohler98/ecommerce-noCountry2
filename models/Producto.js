@@ -13,7 +13,7 @@ const Productos = db.define('productos',{
         defaultValue: uuidv4(),
     },
     titulo:{
-        type: Sequelize.STRING(50),
+        type: Sequelize.STRING(120),
         allowNull:false,
         validate:{
             notEmpty:{
@@ -42,8 +42,23 @@ const Productos = db.define('productos',{
         defaultValue:1
 
     },
+    marca:{
+        type:Sequelize.STRING(50),
+        allowNull:true,
+        defaultValue:'Generic'
+    },
+    envio:{
+        type:Sequelize.BOOLEAN,
+        allowNull:true,
+        defaultValue:false,
+    },
+    descuento:{
+        type:Sequelize.FLOAT,
+        allowNull:true,
+        defaultValue:0,
+    },
     descripcion:{
-        type:Sequelize.STRING(120),
+        type:Sequelize.STRING(500),
         allowNull:true,
     },
     activo:{
@@ -51,6 +66,12 @@ const Productos = db.define('productos',{
         defaultValue:true
     },
     imagen:Sequelize.TEXT,
+},{
+    hooks:{
+        beforeCreate:(producto)=>{
+            producto.descuento = producto.precio*(producto.descuento/100)
+        }
+    }
 })
 
 
