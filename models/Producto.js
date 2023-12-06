@@ -10,7 +10,7 @@ const Productos = db.define('productos',{
         type:Sequelize.UUID,
         primaryKey:true,
         allowNull:false,
-        defaultValue: uuidv4(),
+        defaultValue: Sequelize.UUIDV4,
     },
     titulo:{
         type: Sequelize.STRING(120),

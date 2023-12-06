@@ -2,13 +2,13 @@
 const Sequelize = require('sequelize')
 const {db} = require("../dataBase/db.js")
 const bcrypt = require('bcrypt')
-const { v4: uuidv4 } = require('uuid');
+ 
 const Usuarios = db.define('usuarios',{
     id:{
         type:Sequelize.UUID,
         primaryKey:true,
         allowNull:false,
-        defaultValue: uuidv4(),
+        defaultValue: Sequelize.UUIDV4,
     },
     nombre:{
         type: Sequelize.STRING(50),
