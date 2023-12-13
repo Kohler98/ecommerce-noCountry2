@@ -34,4 +34,5 @@ isAuthenticated,
 authorizeRoles("ADMIN_ROLE"),
 validarCampos,
 eliminarProducto)
+
 module.exports = router

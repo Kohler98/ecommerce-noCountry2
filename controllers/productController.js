@@ -135,5 +135,6 @@ module.exports = {
     editarProducto,
     mostrarProducto,
     eliminarProducto,
-    subirArchivo
+    subirArchivo,
+ 
 }
