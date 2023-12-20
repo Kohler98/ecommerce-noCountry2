@@ -9,8 +9,8 @@ const router = Router()
 router.post('/crear',
 isAuthenticated,
 authorizeRoles("ADMIN_ROLE"),
-validarCampos,
 subirArchivo,
+validarCampos,
 crearProducto)
 
 router.get('/',
@@ -26,6 +26,7 @@ mostrarProducto)
 router.put('/:id',
 isAuthenticated,
 authorizeRoles("ADMIN_ROLE"),
+subirArchivo,
 validarCampos,
 editarProducto)
 
