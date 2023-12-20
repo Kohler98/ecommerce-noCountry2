@@ -8,19 +8,21 @@ const router = Router()
 
 router.post('/crear',
 isAuthenticated,
-authorizeRoles("ADMIN_ROLE"),
 validarCampos,
 createOrder)
 
 router.get('/',
+isAuthenticated,
+validarCampos,
 getOrders)
 
 router.get('/:id',
+isAuthenticated,
+validarCampos,
 getOrder)
 
 router.put('/:id',
 isAuthenticated,
-authorizeRoles("ADMIN_ROLE"),
 validarCampos,
 editOrder)
 

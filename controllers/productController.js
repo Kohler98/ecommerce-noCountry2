@@ -48,7 +48,7 @@ const crearProducto = async(req,res=response)=>{
     if(req.file){
         producto.imagen = req.file.filename
     }
- 
+    console.log(req.file)
     try {
         await Productos.create(producto)
         res.json({msg:'producto creado con exito'})

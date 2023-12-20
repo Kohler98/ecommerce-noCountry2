@@ -50,7 +50,7 @@ const Pedidos = db.define('pedidos',{
     postal_code:Sequelize.STRING(150),
     phone:Sequelize.INTEGER,
     productos:{
-        type:Sequelize.ARRAY(Sequelize.STRING),
+        type:Sequelize.ARRAY(Sequelize.JSON),
         allowNull:true,
         defaultValue:[]
     }
