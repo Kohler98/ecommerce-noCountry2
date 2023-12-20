@@ -12,8 +12,8 @@ const createOrder = async(req,res= response) =>{
           msg:'Pedido creado con exito'
         })
     } catch (error) {
-      console.log(error)
-    }
+      
+          }
 }
 const getOrder = async(req,res= response) =>{
     const {id} = req.params
@@ -21,7 +21,7 @@ const getOrder = async(req,res= response) =>{
         const order = await Pedidos.findByPk(id);
         res.json(order);
       } catch(err) {
-        console.error(err);
+        
         res.status(500).json({ msg: "Error al obtener pedido" });
       }
 
@@ -32,7 +32,7 @@ const getOrders = async(req,res= response) =>{
         const orders = await Pedidos.findAll({where:{usuarioId:id}});
         res.json(orders);
       } catch(err) {
-        console.error(err);
+        
         res.status(500).json({ msg: "Error al obtener pedidos" });
       }
 }

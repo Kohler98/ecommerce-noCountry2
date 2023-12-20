@@ -48,12 +48,12 @@ const crearProducto = async(req,res=response)=>{
     if(req.file){
         producto.imagen = req.file.filename
     }
-    console.log(req.file)
+ 
     try {
         await Productos.create(producto)
         res.json({msg:'producto creado con exito'})
     } catch (error) {
-        console.log(error)
+ 
         res.json({msg:'Error al crear el producto'})
         
     }
@@ -99,10 +99,10 @@ const editarProducto = async(req,res=response)=>{
         const imagePath = path.join(__dirname, '..', 'public', 'uploads', 'productos', filename);
         fs.unlink(imagePath, (err) => {
           if (err) {
-            console.error(err);
+             
             return;
           } 
-          console.log('Archivo eliminado');
+ 
         });
         newProducto.imagen = req.file.filename
     }else{
@@ -120,7 +120,7 @@ const editarProducto = async(req,res=response)=>{
             msg:'Error al tratar de actualizar'
         })
     }
-    console.log(id)
+
 }
 const mostrarProducto = async(req,res=response)=>{
     const {id} = req.params
@@ -146,7 +146,7 @@ const eliminarProducto = async(req,res=response)=>{
         
         fs.unlink(imagenAnterioPath,(error)=>{
             if(error){
-                console.log(error)
+ 
             }
             return
         })

@@ -14,7 +14,7 @@ const createUser = async(req, res = response) => {
           msg:'Usuario creado con exito'
         })
     } catch (error) {
-      console.log(error)
+ 
     }
  
 }
@@ -45,7 +45,7 @@ const getAllUsers = async(req, res) =>{
       const usuarios = await Usuarios.findAll();
       res.json(usuarios);
     } catch(err) {
-      console.error(err);
+ 
       res.status(500).json({ msg: "Error al obtener usuarios" });
     }
 }
@@ -60,7 +60,7 @@ const getUserById = async(req,res)=>{
       res.status(404).json({ msg: "Usuario no encontrado" });
     }
   } catch(err) {
-    console.log(err);
+ 
     res.status(500).json({ msg: "Error al obtener usuario" })
   }
 }

@@ -22,10 +22,10 @@ const uploadImage = async (req, res, next) => {
           const imagePath = path.join(__dirname, '..', 'public', 'uploads', 'users', filename);
           fs.unlink(imagePath, (err) => {
             if (err) {
-              console.error(err);
+ 
               return;
             } 
-            console.log('Archivo eliminado');
+ 
           });
         }
         usuario.imagen = req.file.filename
@@ -34,7 +34,7 @@ const uploadImage = async (req, res, next) => {
  
       res.json({msg:'Imagen de perfil actualizada'});
     } catch(err) {
-      console.log(err);
+ 
       res.status(500).send('Server Error');
     }
   };
